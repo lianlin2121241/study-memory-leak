@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遗忘的定时器</title>
+</head>
+
+<body>
+    <p>内存溢出-遗忘的定时器</p>
+    <button>开启定时器</button>
+</body>
+<script>
+    function fn1() {
+        let largeObj = new Array(100000);
+        setInterval(function () {
+            let myObj = largeObj
+        }, 1000)
+    }
+
+    document.querySelector("button").addEventListener("click", function () {
+        fn1()
+    })
+</script>
+
+</html>

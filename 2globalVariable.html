@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全局变量</title>
+</head>
+
+<body>
+    <p>内存溢出-定义不当变为全局变量</p>
+</body>
+<script>
+    function fn1() {
+        // 此处变量name未被声明
+        name = new Array(99999999)
+    }
+
+    fn1()
+</script>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分离的DOM节点</title>
+</head>
+
+<body>
+    <p>内存溢出-分离的DOM节点</p>
+    <div id="root">
+        <div class="child">我是子元素</div>
+        <button>移除</button>
+    </div>
+</body>
+<script>
+    let btn = document.querySelector("button");
+    let child = document.querySelector(".child");
+    let root = document.querySelector("#root")
+    btn.addEventListener("click", function () {
+        root.removeChild(child)
+    })
+</script>
+
+</html>

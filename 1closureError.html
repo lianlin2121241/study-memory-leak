@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>闭包使用不当</title>
+</head>
+
+<body>
+  <p>内存溢出-闭包使用不当</p>
+  <div>
+    <button onclick="myClick()">执行fn函数</button>
+  </div>
+</body>
+<script>
+  function fn1() {
+    let a = new Array(10000)
+
+    let b = 3;
+
+    function fn2() {
+      let c = [1, 2, 3]
+    }
+
+    fn2();
+
+    return a;
+  }
+
+  let res = [];
+
+  function myClick() {
+    res.push(fn1())
+  }
+</script>
+
+</html>
